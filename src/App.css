@@ -1,0 +1,79 @@
+.App {
+   text-align: center;
+  border: 2px dotted rgb(32, 30, 30);
+  border-radius: 40px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20%;
+}
+/* .container {
+  border: 2px dotted rgb(32, 30, 30);
+  border-radius: 40px;
+  width: 60%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+
+} */
+
+.search{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  width: 50%;
+}
+.rating{
+  margin: 20px;
+  width: 25%;
+  position: relative;
+  left: 600px;
+  top: -65px;
+
+}
+.title{
+  color:red;
+}
+.red {
+  color : rgb(105, 100, 100) !important;
+}
+.film{
+display: flex;
+flex-wrap: wrap;
+padding: 3px;
+justify-content: center;
+}
+.star{
+  display: flex;
+  justify-content: flex-end;
+  width: 100px;
+  border-left: 1px solid black;
+  margin-left: 100px;
+  padding: 0px;
+}
+.content-film{
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  margin: 6px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+#add{
+  padding: 2px;
+  margin: 100px;
+  border: 1px solid black;
+  border-radius: 4px;
+  text-align: center;
+  width: 50px;
+
+}
+.film img {
+  width: 200px;
+}
+.parag{
+  color: brown;
+  margin: 10px;
+  border-top: 1px solid black;
+}

@@ -1,0 +1,34 @@
+import Button from 'react-bootstrap/Button';
+import { InputGroup } from 'react-bootstrap';
+import { FormControl } from 'react-bootstrap';
+
+const Films = (props) => {
+    return (
+        <div className=" search">
+            <div >
+            <InputGroup className="mb">
+                    <FormControl aria-describedby="basic-addon1" placeholder="type movie name to search" />
+                    <InputGroup.Prepend>
+                        <Button variant="outline-secondary">Search</Button>
+                    </InputGroup.Prepend>
+                </InputGroup>
+            </div>
+            <div className='rating'>
+            <p className='title'>minimum rating</p> 
+            
+            {props.icon.map(el =>{el})}
+
+            </div>  
+            </div>
+    )
+
+}
+export default Films;
+this.state={
+            icon:[
+            <i class="far fa-star"></i>,
+            <i class="far fa-star"></i>,
+            <i class="far fa-star"></i>,
+            <i class="far fa-star"></i>,
+            <i class="far fa-star"></i> ]
+        }
