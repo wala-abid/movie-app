@@ -1,5 +1,6 @@
 import React from 'react';
 import Ratingbar from './Ratingbar';
+import LoaderHOC from '../HOC/LoaderHOC'
 const Films = (props) => {
     return (
         <div className='film'>
@@ -21,4 +22,4 @@ const Films = (props) => {
         </div>)
 
 }
-export default Films;
+export default LoaderHOC(Films);

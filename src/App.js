@@ -4,7 +4,8 @@ import Searchbar from './component/Searchbar';
 import disney from './images/disney.jpg';
 import Films from './component/Films';
 import Ratingbar from './component/Ratingbar';
-import Add from './component/Add'
+import Add from './component/Add';
+import LoaderHOc from './HOC/LoaderHOC'
 
 export default class App extends React.Component {
   constructor(props) {
