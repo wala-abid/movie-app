@@ -1,23 +1,19 @@
 import React from 'react';
 import './App.css';
 import Searchbar from './component/Searchbar';
-import disney from './images/disney.jpg';
+
 import Films from './component/Films';
 import Ratingbar from './component/Ratingbar';
 import Add from './component/Add';
 import LoaderHOc from './HOC/LoaderHOC'
-
-export default class App extends React.Component {
+import {connect} from 'react-redux'
+ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       search: '',
-      rating: 1,
-      films: [
-      {img: disney, rating: 4, titre: "film action", description: "2011" },
-      { img: disney, rating: 3, titre: "the vampire", description: "2015" },
-      { img: disney, rating: 2, titre: "opera", description: "2010" },
-      { img: disney, rating: 1, titre: "Hollywood", description: "2012" }]
+    
+    
     }
   }
 
@@ -48,13 +44,20 @@ export default class App extends React.Component {
           {/* <input value={this.state.searchValue} onChange={this.search}/> */}
           <div className='rating'>
             <p className='title'>Minimum rating</p>
-            <Ratingbar rating={this.state.rating} handlerating={this.handlerating} />
+            <Ratingbar rating={this.props.star}  />
           </div>
 
         </div>
-        <Films films={this.state.films} filterSearch={this.state.search} rating={this.state.rating} />
-        <Add addMovie={this.addNewMovie}/>
+        <Films filterSearch={this.state.search} rating={this.state.rating} />
+        <Add />
       </div>
     )
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    star : state.filter.filterStar
+  }
+}
+
+export default connect (mapStateToProps) (App)

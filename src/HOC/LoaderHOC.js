@@ -9,7 +9,7 @@ const LoaderHOC =(Component)=>{
         componentDidMount() {
             setTimeout(
                 ()=>this.setState({isLoading:false})
-                ,4000)
+                ,1000)
         }
 
         render(){

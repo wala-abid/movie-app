@@ -1,5 +1,7 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import {connect} from 'react-redux'
+import {addMovie} from '../action/movieAction'
 class Add extends React.Component {
 
     constructor(props) {
@@ -25,24 +27,24 @@ console.log('constructor')
             [event.target.name]: event.target.value
         })
     }
-componentDidMount= ()=> {
-console.log('componentDidMount')
 
-}
-componentWillMount = ()=> {
-    console.log('componentWillMount')
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-  .then(response => console.log( response,'hhh' ))
-  .then(json => console.log(json))
+onSubmit = ()=>{
+    const obj = {
+        rating :this.state.rating ,
+        titre : this.state.titre,
+        description :this.state.description,
+        img :this.state.img,
     }
-    componentWillUpdate = ()=> {
-        console.log('componentWillUpdate')
-        }
-        componentDidUpdate = ()=> {
-            console.log('componentDidUpdate')
-            }
+    this.props.addMovie(obj)
+    this.setState({
+        show : false
+    })
+}
+
+
+
     render() {
-        console.log('render')
+        console.log(this.props, 'render')
         return (
             <div>
                 <input type="button" id='add' value="ADD" onClick={this.handleShow} />
@@ -60,7 +62,7 @@ componentWillMount = ()=> {
                         <Button variant="secondary" onClick={this.handleClose}>
                             Close
                         </Button>
-                        <Button variant="primary" onClick={() => this.props.addMovie(this.state.rating, this.state.titre,this.state.img, this.state.description)}>
+                        <Button variant="primary" onClick={this.onSubmit}>
                             Save
                         </Button>
                     </Modal.Footer>
@@ -69,4 +71,14 @@ componentWillMount = ()=> {
         )
     }
 }
-export default Add;
+
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         addMovie : () => dispatch(addMovie())
+
+
+
+//     }
+// }
+
+export default connect(null , {addMovie })(Add) ;
